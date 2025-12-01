@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+</head>
+<body>
+    <h1>🎧 Music Player</h1>
+    <input type="text" id="buscador" placeholder="Buscar artista o canción...">
+
+    <div id="player-container">
+        <audio id="audio" controls></audio>
+        <div id="controls">
+            <button id="prev">⏮ Anterior</button>
+            <button id="next">⏭ Siguiente</button>
+        </div>
+    </div>
+
+    <div>
+        <button onclick="addSongFromURL()">Agregar canción</button>
+        <button onclick="biblioteca()">Volver a la biblioteca</button>
+        <button onclick="exportSQLite()">Guardar backup (.db)</button><br><br>
+
+        <input type="file" id="importDB" accept=".db">
+        <button onclick="triggerImport()">Importar</button>
+    </div>
+
+    <h2>Lista de Canciones</h2>
+    <div id="song-cards" class="grid"></div><br><br><br>
+
+    <div>
+        <input id="new-playlist-name" placeholder="Nombre de playlist">
+        <button onclick="createPlaylist()">Crear playlist</button><br><br>
+        <div id="playlist-cards" class="grid"></div>
+    </div>
+
+
+
+    <script src="eximportSQL.js"></script>
+    <script src="songs-db.js"></script>
+    <script src="songs.js"></script>
+    <script src="playlists.js"></script>
+    <script src="player.js"></script>
+
+    <script>
+        // 🔎 Buscador visual (no afecta lógica)
+        document.getElementById("buscador").addEventListener("input", function () {
+        const q = this.value.toLowerCase();
+        document.querySelectorAll(".card").forEach(card => {
+        //const artista = card.dataset.artista.toLowerCase();
+        const titulo  = card.dataset.titulo.toLowerCase();
+        //card.style.display = (artista.includes(q) || titulo.includes(q)) ? "" : "none";
+        card.style.display = (titulo.includes(q)) ? "" : "none";
+        }); });
+    </script>
+
+</body>
+</html>
