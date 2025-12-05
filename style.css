@@ -1,0 +1,67 @@
+body {
+background-color: #121212;
+color: white;
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+
+
+h1, h2 {
+color: #00aaff;
+text-align: center;
+}
+
+#player-container {
+margin-bottom: 30px;
+}
+
+
+#controls button {
+background: #00aaff;
+color: white;
+border: none;
+padding: 10px 20px;
+margin: 5px;
+cursor: pointer;
+font-size: 16px;
+border-radius: 5px;
+}
+
+
+#controls button:hover {
+background: #0088cc;
+}
+
+
+li {
+cursor: pointer;
+margin: 5px 0;
+}
+
+
+li:hover {
+color: #00aaff;
+}
+
+  #buscador { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 18px; border-radius: 10px; border: none; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .card { background: #222; padding: 15px; border-radius: 12px; text-align: center; transition: 0.2s; }
+  .card:hover { transform: scale(1.03); }
+  .card img { width: 100%; border-radius: 10px; }
+  .playbtn, .addbtn { margin-top: 10px; padding: 8px 12px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; }
+  .playbtn { background: #4caf50; color: white; }
+  .addbtn { background: #2196f3; color: white; }
+  #playlistPanel { background: #222; padding: 15px; border-radius: 12px; margin-top: 25px; }
+  .songItem { background:#333; padding:8px; margin-bottom:8px; border-radius:8px; display:flex; justify-content:space-between; align-items:center }
+  #playerBox { position: fixed; bottom: 10px; right: 10px; background: #000; padding: 10px; border-radius: 12px; display: none; }
+  #playerBox iframe { width: 300px; height: 80px; }
+  .small { font-size: 12px; color:#bbb }
+
+.delbtn {
+    background: #e53935;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
